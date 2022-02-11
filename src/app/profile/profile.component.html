@@ -1,0 +1,223 @@
+<div class="wrapper">
+  <div class="left-wrapper">
+    <mat-card class="profile-img mat-elevation-z8">
+      <div class="avatar-wrapper">
+        <img class="avatar" mat-card-avatar [src]="avatarURL">
+        <a class="avatar-button" mat-icon-button target="_blank" href="https://en.gravatar.com/emails/">
+          <mat-icon>edit</mat-icon>
+        </a>
+      </div>
+    </mat-card>
+    <mat-card class="profile-info mat-elevation-z8">
+      <div class="row">
+        <div class="col-1">Name</div>
+        <div class="col-2">{{this.user.name}}</div>
+      </div>
+      <mat-divider inset></mat-divider>
+
+      <div class="row">
+        <div class="col-1">Email</div>
+        <div class="col-2">{{this.user.email}}</div>
+      </div>
+      <mat-divider inset></mat-divider>
+
+      <div class="row">
+        <div class="col-1">Phone</div>
+        <div class="col-2">{{this.user.phone}}</div>
+      </div>
+
+    </mat-card>
+  </div>
+  <div class="right-wrapper">
+
+
+
+    <div class="profile-order-info" *ngIf="!isWorker">
+      <h1>Таблица с вашими заказамии</h1>
+      <table mat-table  [dataSource]="orders" class="mat-elevation-z8 ">
+
+
+        <ng-container  matColumnDef="id">
+          <th  mat-header-cell *matHeaderCellDef> Order No.</th>
+          <td  mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="item">
+          <th mat-header-cell *matHeaderCellDef> Item</th>
+          <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="defect">
+          <th mat-header-cell *matHeaderCellDef> Defect</th>
+          <td mat-cell *matCellDef="let element"> {{element.defect}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef> Time of order</th>
+          <td mat-cell *matCellDef="let element"> {{element.time }} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status</th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <!--      <ng-container matColumnDef="actions">-->
+        <!--        <th mat-header-cell *matHeaderCellDef> Actions </th>-->
+        <!--        <td mat-cell *matCellDef="let element">-->
+        <!--          <button (click)="openDialog(element)">Details</button>-->
+        <!--        </td>-->
+        <!--      </ng-container>-->
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsOrders"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsOrders;"></tr>
+      </table>
+    </div>
+
+    <div class="profile-order-info" *ngIf="!isWorker">
+      <h1>Таблица с вашими выполниными заказамии</h1>
+
+      <table mat-table  [dataSource]="doneOrders" class="mat-elevation-z8 ">
+
+
+        <ng-container  matColumnDef="id">
+          <th  mat-header-cell *matHeaderCellDef> Order No.</th>
+          <td  mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="item">
+          <th mat-header-cell *matHeaderCellDef> Item</th>
+          <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="defect">
+          <th mat-header-cell *matHeaderCellDef> Defect</th>
+          <td mat-cell *matCellDef="let element"> {{element.defect}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef> Time of order</th>
+          <td mat-cell *matCellDef="let element"> {{element.time }} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status</th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="workerName">
+          <th mat-header-cell *matHeaderCellDef> Worker name</th>
+          <td mat-cell *matCellDef="let element"> {{element.workerName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cause">
+          <th mat-header-cell *matHeaderCellDef> Cause</th>
+          <td mat-cell *matCellDef="let element"> {{element.cause}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price</th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="doneTime">
+          <th mat-header-cell *matHeaderCellDef> Time of repair</th>
+          <td mat-cell *matCellDef="let element"> {{element.doneTime}} </td>
+        </ng-container>
+        <!--      <ng-container matColumnDef="actions">-->
+        <!--        <th mat-header-cell *matHeaderCellDef> Actions </th>-->
+        <!--        <td mat-cell *matCellDef="let element">-->
+        <!--          <button (click)="openDialog(element)">Details</button>-->
+        <!--        </td>-->
+        <!--      </ng-container>-->
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsDoneOrders"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsDoneOrders;"></tr>
+      </table>
+    </div>
+
+    <div class="profile-order-info" *ngIf="isWorker">
+      <h1>Таблица с доступными</h1>
+      <table mat-table  [dataSource]="newOrders" class="mat-elevation-z8 ">
+
+
+        <ng-container  matColumnDef="id">
+          <th  mat-header-cell *matHeaderCellDef> Order No.</th>
+          <td  mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="item">
+          <th mat-header-cell *matHeaderCellDef> Item</th>
+          <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="defect">
+          <th mat-header-cell *matHeaderCellDef> Defect</th>
+          <td mat-cell *matCellDef="let element"> {{element.defect}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef> Time of order</th>
+          <td mat-cell *matCellDef="let element"> {{element.time }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element">
+            <button  mat-stroked-button color="primary" (click)="getOrder(element.id)" >Accept order</button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsNewOrders"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsNewOrders;"></tr>
+      </table>
+    </div>
+
+    <div class="profile-order-info" *ngIf="isWorker">
+      <h1>Таблица с вашими заказами</h1>
+
+      <table mat-table  [dataSource]="myOrders" class="mat-elevation-z8 ">
+
+
+        <ng-container  matColumnDef="id">
+          <th  mat-header-cell *matHeaderCellDef> Order No.</th>
+          <td  mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="item">
+          <th mat-header-cell *matHeaderCellDef> Item</th>
+          <td mat-cell *matCellDef="let element"> {{element.item}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="defect">
+          <th mat-header-cell *matHeaderCellDef> Defect</th>
+          <td mat-cell *matCellDef="let element"> {{element.defect}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef> Time of order</th>
+          <td mat-cell *matCellDef="let element"> {{element.time }} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="customerName">
+          <th mat-header-cell *matHeaderCellDef> Customer name</th>
+          <td mat-cell *matCellDef="let element"> {{element.customerName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="customerPhone">
+          <th mat-header-cell *matHeaderCellDef> Customer phone</th>
+          <td mat-cell *matCellDef="let element"> {{element.customerPhone}} </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element">
+            <button  mat-stroked-button color="primary" (click)="openDialog(element.id)">Finish order</button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsMyOrders"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsMyOrders;"></tr>
+      </table>
+    </div>
+
+  </div>
+</div>

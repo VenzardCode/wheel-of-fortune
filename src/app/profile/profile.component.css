@@ -1,0 +1,56 @@
+.wrapper{
+  display: flex;
+
+}
+.avatar{
+  width: 100%;
+  height: auto;
+  border: solid 0.125rem #3f51b5;
+}
+.avatar-wrapper{
+  position: relative;
+}
+.avatar-button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #3f51b5;
+}
+.mat-icon{
+  color: white;
+}
+.left-wrapper{
+  width: 20rem;
+}
+.profile-img{
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.right-wrapper{
+  flex: 1;
+}
+.profile-info{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  align-self: flex-start;
+}
+.profile-order-info{
+ margin: 1rem;
+}
+.profile-order-info>table{
+  width: 100%;
+}
+.row{
+  display: flex;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.col-1{
+  font-weight: bold;
+  width: 6rem;
+}
+.col-2{
+  flex:1;
+}

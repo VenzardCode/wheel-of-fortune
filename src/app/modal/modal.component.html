@@ -1,0 +1,30 @@
+<!--<p>modal works!</p>-->
+<!--<h1>{{data.elementData}}</h1>-->
+<!--<button (click)="closeModal()">X</button>-->
+<div class="wrapper">
+
+  <form  [formGroup]="RepairFinishForm" (ngSubmit)="onSubmit()" class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Price</mat-label>
+      <input [formControlName]="'price'"  matInput type="number"  >
+      <mat-error *ngIf=" RepairFinishForm.controls['price'].hasError('required')">
+        Item is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Cause of defect description</mat-label>
+      <textarea [formControlName]="'cause'" matInput  ></textarea>
+      <mat-error *ngIf=" RepairFinishForm.controls['cause'].hasError('required')">
+        Defect description is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <div class="button-wrapper">
+      <button mat-stroked-button  color="primary"   type="submit" >Send
+        <mat-spinner></mat-spinner>
+      </button>
+            <button mat-stroked-button color="primary" (click)="closeModal()" type="button">X</button>
+    </div>
+  </form>
+</div>
+
