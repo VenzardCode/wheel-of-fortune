@@ -1,10 +1,10 @@
 <div class="wrapper">
 
-  <form   [formGroup]="LoginForm" (ngSubmit)="onSubmit()" class="example-form">
+  <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Email</mat-label>
-      <input [formControlName]="'email'" type="email" matInput  placeholder="email@example.com"  >
-      <mat-icon matSuffix>alternate_email</mat-icon>
+      <mat-label>Login</mat-label>
+      <input [formControlName]="'login'" type="login" matInput>
+      <mat-icon matSuffix>alternate_login</mat-icon>
       <mat-error *ngIf=" LoginForm.controls['password'].hasError('required')">
         Password is <strong>required</strong>
       </mat-error>
@@ -12,7 +12,7 @@
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Password</mat-label>
-      <input [formControlName]="'password'" matInput [type]="hide ? 'password' : 'text'"  >
+      <input [formControlName]="'password'" matInput [type]="hide ? 'password' : 'text'">
       <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
               [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -22,10 +22,8 @@
       </mat-error>
     </mat-form-field>
     <div class="button-wrapper">
-      <button mat-stroked-button  color="primary"   type="submit" >Login
-        <mat-spinner></mat-spinner>
+      <button mat-stroked-button color="primary" type="submit">Login
       </button>
-      <button mat-stroked-button color="primary" (click)="navigateTo('register')" type="button">Register</button>
     </div>
   </form>
 </div>

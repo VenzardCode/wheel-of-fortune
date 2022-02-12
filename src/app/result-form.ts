@@ -1,5 +1,6 @@
-export interface ResultForm{
-  token:string;
-  expirationTtl?:number;
-  role:string;
+export interface ResultForm {
+  email: string;
+  name: string;
+  rolled: number;
+  _id: string;
 }

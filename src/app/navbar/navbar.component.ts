@@ -9,44 +9,26 @@ import {AuthService} from "../auth/auth.service";
 })
 export class NavbarComponent implements OnInit {
   public links: any[] = []
-  public linksUnAuth: any[] = [
+  private linksUnAuth: any[] = [
     {
       action: () => this.navigateTo('login'),
       view: 'Login',
       index: 0
     },
-    {
-      action: () => this.navigateTo('register'),
-      view: 'Register',
-      index: 1
-    }
-
-
   ];
-  public linksAuth: any[] = [
-
-    {
-      action: () => this.navigateTo('profile'),
-      view: 'Profile',
-      index: 0
-    },
-    {
-      action: () => this.navigateTo('repair-order'),
-      view: 'Repair order',
-      index: 1
-    },
+  private linksAuth: any[] = [
     {
       action: () => {
         this.authService.logout();
         this.navigateTo('login')
       },
       view: 'Log out',
-      index: 2
+      index: 0
     },
 
   ];
 
-  activeLinkIndex = -1;
+  private activeLinkIndex: number = -1;
 
   constructor(private router: Router, public authService: AuthService) {
     // this.updateLinks()

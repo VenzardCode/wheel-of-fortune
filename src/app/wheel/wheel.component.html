@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <ngx-wheel
+    [width]='width'
+    [height]='height'
+    [spinDuration]='spinDuration'
+    [disableSpinOnClick]='true'
+    [items]='items'
+    [innerRadius]='innerRadius'
+    [spinAmount]='spinAmount'
+    pointerStrokeColor='#343a40'
+    pointerFillColor='#dc3545'
+    [idToLandOn]='idToLandOn'
+    (onSpinComplete)='after()'
+  >
+  </ngx-wheel>
+</div>
+<div class="button-wrapper">
+  <button *ngIf="!rolled" color="accent" type="submit" (click)="rollClick()" mat-raised-button>Roll</button>
+</div>
