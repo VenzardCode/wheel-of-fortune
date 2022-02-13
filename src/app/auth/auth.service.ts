@@ -21,7 +21,7 @@ export class AuthService {
     return isNaN(parsed) ? -1 : parsed;
   }
 
-  login(res: ResultForm): Observable<boolean> {
+  public login(res: ResultForm): Observable<boolean> {
     localStorage.setItem('auth', 'true');
     localStorage.setItem('rolled', res.rolled.toString());
 
@@ -30,7 +30,7 @@ export class AuthService {
     );
   }
 
-  logout(): void {
+  public logout(): void {
     this.httpService.logoutRequest().subscribe(res => {
 
     }, error => {

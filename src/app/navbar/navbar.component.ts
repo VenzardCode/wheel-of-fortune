@@ -31,7 +31,6 @@ export class NavbarComponent implements OnInit {
   private activeLinkIndex: number = -1;
 
   constructor(private router: Router, public authService: AuthService) {
-    // this.updateLinks()
   }
 
 

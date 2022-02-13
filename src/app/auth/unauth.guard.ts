@@ -9,7 +9,7 @@ export class UnauthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {
   }
 
-  canActivate(
+  public canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): true | UrlTree {
     const url: string = state.url;
@@ -17,7 +17,7 @@ export class UnauthGuard implements CanActivate {
     return this.checkLogin(url);
   }
 
-  checkLogin(url: string): true | UrlTree {
+  private checkLogin(url: string): true | UrlTree {
     if (!(this.authService.isAuthenticated())) {
       return true;
     }

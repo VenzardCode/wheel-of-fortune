@@ -27,7 +27,7 @@ export class LoginComponent {
     });
   }
 
-  openSnackBar(message: string) {
+ private openSnackBar(message: string) {
     this._snackBar.open(message, '', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
@@ -54,7 +54,7 @@ export class LoginComponent {
       });
     }
   }
-  login(res: ResultForm) {
+  private login(res: ResultForm) {
 
     this.authService.login(res).subscribe(() => {
       if (this.authService.isAuthenticated()) {
@@ -64,7 +64,7 @@ export class LoginComponent {
     });
   }
 
-  logout() {
+  public logout() {
     this.authService.logout();
   }
 
