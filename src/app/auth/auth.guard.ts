@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {
   }
 
-  public canActivate(
+  public canActivate (
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): true | UrlTree {
     const url: string = state.url;

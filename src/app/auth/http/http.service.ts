@@ -1,9 +1,9 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {LoginForm} from './login/login-form';
-import {ResultForm} from './result-form';
-import {RollIntrface} from "./wheel/roll-intrface";
+import {LoginForm} from '../../types/login-form';
+import {ResultForm} from '../../types/result-form';
+import {RollInterface} from "../../types/roll-intrface";
 
 
 @Injectable({
@@ -23,8 +23,8 @@ export class HttpService {
     return this.http.get<string>('/auth/logout');
   }
 
-  public rollRequest(): Observable<RollIntrface> {
-    return this.http.get<RollIntrface>('/roll');
+  public rollRequest(): Observable<RollInterface> {
+    return this.http.get<RollInterface>('/roll');
 
   }
 

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ViewChild} from '@angular/core';
 import {Item, NgxWheelComponent} from 'ngx-wheel';
-import {HttpService} from "../http.service";
+import {HttpService} from "../auth/http/http.service";
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from "@angular/material/snack-bar";
 import {AuthService} from "../auth/auth.service";
 
@@ -11,16 +11,8 @@ import {AuthService} from "../auth/auth.service";
   styleUrls: ['./wheel.component.css']
 })
 export class WheelComponent implements OnInit {
-   @ViewChild(NgxWheelComponent, {static: false}) private wheel;
 
-  constructor(public httpService: HttpService, private _snackBar: MatSnackBar, private authService: AuthService) {
-  }
-
-  ngOnInit(): void {
-    if (this.rolled) {
-      this.openSnackBar(this.items[this.authService.rolled].text)
-    }
-  }
+  @ViewChild(NgxWheelComponent, {static: false}) private wheel;
 
   public rolled: boolean = this.authService.rolled !== -1;
   public width: number = 600;
@@ -45,7 +37,17 @@ export class WheelComponent implements OnInit {
     {id: 9, text: 'Вы получили 35 💎', image: '/assets/9.png'},
   ] as any as Item[]
 
-  public rollClick() {
+  constructor(public httpService: HttpService, private _snackBar: MatSnackBar, private authService: AuthService) {
+  }
+
+  public ngOnInit(): void {
+    if (this.rolled) {
+      this.openSnackBar(this.items[this.authService.rolled].text)
+    }
+  }
+
+
+  public rollClick(): void {
     this.httpService.rollRequest().subscribe(res => {
       this.idToLandOn = res.rolled;
       console.log(res.rolled)
@@ -57,12 +59,12 @@ export class WheelComponent implements OnInit {
   }
 
 
-  public after() {
+  public after(): void {
     this.openSnackBar(this.items[this.idToLandOn].text)
     console.log('after')
   }
 
-  private openSnackBar(message: string) {
+  private openSnackBar(message: string): void {
     this._snackBar.open(message, '', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,

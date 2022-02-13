@@ -1,11 +1,11 @@
 <div class="wrapper">
 
-  <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" class="example-form">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Login</mat-label>
       <input [formControlName]="'login'" type="login" matInput>
       <mat-icon matSuffix>alternate_login</mat-icon>
-      <mat-error *ngIf=" LoginForm.controls['password'].hasError('required')">
+      <mat-error *ngIf=" loginForm.controls['password'].hasError('required')">
         Password is <strong>required</strong>
       </mat-error>
     </mat-form-field>
@@ -17,7 +17,7 @@
               [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
-      <mat-error *ngIf=" LoginForm.controls['password'].hasError('required')">
+      <mat-error *ngIf=" loginForm.controls['password'].hasError('required')">
         Password is <strong>required</strong>
       </mat-error>
     </mat-form-field>

@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {tap} from 'rxjs/operators';
-import {ResultForm} from "../result-form";
-import {HttpService} from "../http.service";
+import {ResultForm} from "../types/result-form";
+import {HttpService} from "./http/http.service";
 import {Router} from "@angular/router";
 
 
@@ -10,11 +10,10 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class AuthService {
+  public redirectUrl: string | null = null;
 
   constructor(public httpService: HttpService, private router: Router) {
   }
-
-  public redirectUrl: string | null = null;
 
   get rolled() {
     let parsed: number = parseInt(localStorage.getItem('rolled') ?? '-1');
