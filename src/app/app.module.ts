@@ -11,7 +11,6 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {AuthGuard} from './auth/auth.guard';
-import {UnauthGuard} from "./auth/unauth.guard";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
@@ -25,8 +24,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
-    canActivate: [UnauthGuard],
-
+    canActivate: [AuthGuard],
   },
   {
     path: 'wheel-of-fortune',

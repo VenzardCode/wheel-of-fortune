@@ -7,26 +7,28 @@ import {AuthService} from './auth.service';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+
   constructor(private authService: AuthService, private router: Router) {
+
   }
 
   public canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): true | UrlTree {
-    const url: string = state.url;
+    state: RouterStateSnapshot): boolean {
+    if (!this.authService.isAuthenticated() && state.url !== '/login') {
 
-    return this.checkLogin(url);
-  }
+      this.router.navigate(['/login']);
+      return false;
+    } else {
+      if (this.authService.isAuthenticated() && state.url === '/login') {
+        this.router.navigate(['/wheel-of-fortune']);
 
-  private checkLogin(url: string): true | UrlTree {
-    if (this.authService.isAuthenticated()) {
-      return true;
+        return false;
+      }
+      return true
     }
 
 
-    this.authService.redirectUrl = url;
-
-    return this.router.parseUrl('/login');
   }
 }
 

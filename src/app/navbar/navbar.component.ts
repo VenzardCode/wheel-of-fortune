@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
   }
 
 
- public ngOnInit(): void {
+  public ngOnInit(): void {
     this.router.events.subscribe((res) => {
       this.activeLinkIndex = this.links.indexOf(this.links.find(tab => tab.link === '.' + this.router.url));
       if (res.constructor === NavigationStart) {
