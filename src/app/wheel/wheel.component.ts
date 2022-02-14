@@ -44,26 +44,22 @@ export class WheelComponent implements OnInit {
     if (this.rolled) {
       this.openSnackBar(this.items[this.authService.rolled].text)
     }
-    console.log(this.rolled)
   }
 
 
   public rollClick(): void {
     this.httpService.rollRequest().subscribe(res => {
       this.idToLandOn = res.rolled;
-      console.log(res.rolled)
       this.rolled = true;
       localStorage.setItem('rolled', res.rolled.toString());
       setTimeout(() => this.wheel.spin(), 0);
     }, error => {
-      console.log(error)
     })
   }
 
 
   public after(): void {
     this.openSnackBar(this.items[this.idToLandOn].text)
-    console.log('after')
   }
 
   private openSnackBar(message: string): void {
