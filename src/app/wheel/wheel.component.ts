@@ -44,6 +44,7 @@ export class WheelComponent implements OnInit {
     if (this.rolled) {
       this.openSnackBar(this.items[this.authService.rolled].text)
     }
+    console.log(this.rolled)
   }
 
 
@@ -52,7 +53,8 @@ export class WheelComponent implements OnInit {
       this.idToLandOn = res.rolled;
       console.log(res.rolled)
       this.rolled = true;
-      this.wheel.spin();
+      localStorage.setItem('rolled', res.rolled.toString());
+      setTimeout(() => this.wheel.spin(), 0);
     }, error => {
       console.log(error)
     })

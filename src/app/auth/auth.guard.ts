@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {
   }
 
-  public canActivate (
+  public canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): true | UrlTree {
     const url: string = state.url;
@@ -22,6 +22,7 @@ export class AuthGuard implements CanActivate {
     if (this.authService.isAuthenticated()) {
       return true;
     }
+
 
     this.authService.redirectUrl = url;
 
