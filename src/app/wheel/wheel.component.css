@@ -1,8 +1,105 @@
-.wrapper {
-  height: 100%;
+.body-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+
+}
+.top-bar{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.roll-button{
+  position: relative;
+  margin: 0;
+  width: 350px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  border-radius: 15px;
+  font-size: 2em;
+  color: white;
+  outline: 0;
+  background: linear-gradient(90deg, #F3C943, #E2582D);
+}
+.roll-result{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 2em;
+  color: white;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #F3C943, #E2582D);
+}
+.roll-button:hover:not([disabled]):after{
+  position: absolute;
+  content: '';
+  border-radius: 15px;
+
+  inset: 0;
+  background-color: rgba(255,255,255,0.15);
+}
+.roll-button[disabled]:after{
+  position: absolute;
+  content: '';
+  border-radius: 15px;
+  inset: 0;
+  background-color: rgba(0,0,0,0.50);
+}
+.wheel{
+
+  width: calc(100% + 440px);
+  margin: -170px -220px -175px;
+}
+.wheel-wrapper{
+  max-width: 100vw;
+}
+.logo{
+
+  height: 100px;
+}
+.top-glow{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.left-crystal{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.right-crystal{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.log-out-content {
+  display: flex;
+  align-items: baseline;
+}
+
+.exit-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 10L13 5V8H6V12H13V15L19 10ZM3 3H11V1H3C1.9 1 1 1.9 1 3V17C1 18.1 1.9 19 3 19H11V17H3V3Z' fill='white'/%3E%3C/svg%3E");
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  margin-left: 5px;
+}
+
+.log-out {
+  vertical-align: baseline;
+}
+
+.wrapper {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  position: relative;
+  background-color: #0E1738;
 }
 
 .example-full-width {
@@ -11,5 +108,6 @@
 
 .button-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  place-items: center;
 }
