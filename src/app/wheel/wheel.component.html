@@ -1,225 +1,229 @@
 <div class="wrapper">
-<div style="overflow: hidden">
-  <div class="top-bar">
-    <img class="logo" alt="Logo" src="assets/Logo.png">
-    <button class="log-out" (click)="logout()" mat-button>
+  <div style="overflow: hidden">
+    <div class="top-bar">
+      <img class="logo" alt="Logo" src="assets/Logo.png">
+      <button class="log-out" (click)="logout()" mat-button>
     <span class="log-out-content">
       Выйти из системы
       <span class="exit-icon"></span>
     </span>
-    </button>
-  </div>
-  <div class="body-wrapper">
+      </button>
+    </div>
+    <div class="body-wrapper">
 
-    <div class="wheel-wrapper">
-      <svg class="wheel" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000"
-           height="1000"
-           viewBox="-200 -200 1200 1200" fill="none">
-        <g filter="url(#filter0_f_8_6)">
-          <ellipse cx="402.089" cy="759.067" rx="278.851" ry="28.4974" fill="#050915"/>
+      <div class="wheel-wrapper">
+        <svg class="wheel" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000"
+             height="1000"
+             viewBox="-200 -200 1200 1200" fill="none">
+          <g filter="url(#filter0_f_8_6)">
+            <ellipse cx="402.089" cy="759.067" rx="278.851" ry="28.4974" fill="#050915"/>
+          </g>
+          <g opacity="0.2" filter="url(#filter1_f_8_6)">
+            <ellipse cx="407.311" cy="342.487" rx="370.757" ry="342.487" fill="#FDF259"/>
+          </g>
+          <g clip-path="url(#clip0_8_6)">
+            <path
+              d="M555.85 716.959C556.381 692.2 521.392 645.093 507.077 629.394C492.775 613.684 481.635 584.699 480.053 572.021H400.009H398.947H318.913C317.32 584.699 306.192 613.684 291.878 629.394C277.564 645.093 242.574 692.2 243.105 716.959C243.636 741.718 243.105 741.718 243.105 741.718H398.947H400.009H555.85C555.85 741.718 555.319 741.718 555.85 716.959Z"
+              fill="url(#paint0_linear_8_6)"/>
+            <path
+              d="M572.15 715.443C569.899 713.032 566.978 713.33 566.978 713.33H399.489H399.478H231.977C231.977 713.33 229.057 713.032 226.805 715.443C224.22 718.222 224.554 723.448 224.554 723.448V747.15H399.466H399.478H574.389V723.448C574.401 723.448 574.736 718.222 572.15 715.443Z"
+              fill="url(#paint1_linear_8_6)"/>
+          </g>
+          <rect y="35.2332" width="800" height="764.767" fill="url(#pattern0)"/>
+          <g transform="rotate(45)" [style.transform]="'rotate('+(-wheelRotation)+'deg)'" transform-origin="401 353"
+             class="wheel-rotation">
+            <path
+              d="M475.65 319.383C466.685 299.576 450.474 284.419 430.002 276.705L430.75 274.751C451.743 282.66 468.363 298.203 477.571 318.525L475.65 319.383Z"
+              fill="#FBA629"/>
+            <path
+              d="M479.504 382.333L477.534 381.591C485.303 361.289 484.637 339.197 475.661 319.387L475.63 319.298L476.645 318.948L477.582 318.53C486.79 338.852 487.471 361.515 479.504 382.333Z"
+              fill="#F3F3E9"/>
+            <path
+              d="M435.383 428.802L434.519 426.895C454.484 417.989 469.761 401.904 477.53 381.602L479.5 382.344C471.533 403.163 455.864 419.666 435.383 428.802Z"
+              fill="#39A1E8"/>
+            <path
+              d="M371.068 430.705L371.816 428.75C392.277 436.459 414.541 435.797 434.507 426.891L435.371 428.798C414.901 437.938 392.061 438.614 371.068 430.705Z"
+              fill="#CA3D77"/>
+            <path
+              d="M371.068 430.705C350.075 422.795 333.443 407.248 324.235 386.926L326.157 386.069C335.133 405.879 351.344 421.037 371.805 428.746L371.056 430.701L371.068 430.705Z"
+              fill="#FBA629"/>
+            <path
+              d="M324.26 386.961C315.038 366.608 314.357 343.945 322.329 323.115L324.299 323.857C316.53 344.159 317.196 366.251 326.161 386.057L324.26 386.961Z"
+              fill="#F3F3E9"/>
+            <path
+              d="M324.299 323.857L322.329 323.115C330.3 302.285 345.97 285.783 366.451 276.646L367.315 278.553C347.345 287.471 332.068 303.556 324.299 323.857Z"
+              fill="#39A1E8"/>
+            <path
+              d="M367.31 278.564L366.446 276.658C386.928 267.521 409.768 266.845 430.75 274.751L430.002 276.705C409.541 268.997 387.276 269.658 367.31 278.564Z"
+              fill="#F3F3E9"/>
+          </g>
+          <g clip-path="url(#clip1_8_6)">
+            <path d="M371.42 316.722L400.093 265.488L430.471 315.745L371.42 316.722Z" fill="url(#paint2_linear_8_6)"/>
+            <rect width="83.7405" height="84.2562"
+                  transform="matrix(0.999863 -0.0165464 0.0168066 0.999859 359.353 311.309)"
+                  fill="url(#pattern1)"/>
+            <path
+              d="M437.036 317.325C427.653 308.32 414.815 302.871 400.737 303.104C386.66 303.337 374.012 309.208 364.949 318.518C355.873 327.829 350.381 340.567 350.616 354.535C350.85 368.503 356.767 381.053 366.139 390.046C375.522 399.051 388.36 404.5 402.425 404.268C416.503 404.035 429.151 398.164 438.226 388.853C447.302 379.542 452.794 366.804 452.559 352.836C452.337 338.88 446.42 326.331 437.036 317.325ZM429.863 380.815C422.87 387.989 413.113 392.525 402.256 392.704C391.398 392.884 381.495 388.674 374.264 381.735C367.033 374.796 362.463 365.116 362.281 354.342C362.1 343.569 366.331 333.743 373.337 326.568C380.33 319.394 390.086 314.858 400.944 314.679C411.802 314.499 421.705 318.697 428.936 325.648C436.166 332.587 440.737 342.267 440.918 353.041C441.099 363.814 436.856 373.64 429.863 380.815Z"
+              fill="url(#paint3_linear_8_6)"/>
+            <rect width="96.0812" height="95.3349"
+                  transform="matrix(0.999863 -0.0165464 0.0168066 0.999859 352.811 306.752)"
+                  fill="url(#pattern2)"/>
+          </g>
+          <defs>
+            <filter id="filter0_f_8_6" x="73.2375" y="680.57" width="657.702" height="156.995"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+              <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_8_6"/>
+            </filter>
+            <filter id="filter1_f_8_6" x="-163.447" y="-200" width="1141.51" height="1084.97"
+                    filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+              <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_8_6"/>
+            </filter>
+            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image0_8_6" transform="translate(0.1 0.014) scale(0.001)"/>
+            </pattern>
+            <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image1_8_6" transform="scale(0.00342466)"/>
+            </pattern>
+            <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image2_8_6" transform="scale(0.003003)"/>
+            </pattern>
+            <linearGradient id="paint0_linear_8_6" x1="399.479" y1="741.716" x2="399.479" y2="572.021"
+                            gradientUnits="userSpaceOnUse">
+              <stop stop-color="#94171F"/>
+              <stop offset="0.022" stop-color="#98171F"/>
+              <stop offset="0.2218" stop-color="#BD1820"/>
+              <stop offset="0.328" stop-color="#CB1820"/>
+              <stop offset="0.4459" stop-color="#BA1820"/>
+              <stop offset="0.6368" stop-color="#A5171F"/>
+              <stop offset="0.8236" stop-color="#98171F"/>
+              <stop offset="1" stop-color="#94171F"/>
+            </linearGradient>
+            <linearGradient id="paint1_linear_8_6" x1="399.48" y1="747.15" x2="399.48" y2="713.32"
+                            gradientUnits="userSpaceOnUse">
+              <stop stop-color="#94171F"/>
+              <stop offset="0.6452" stop-color="#FF3C33"/>
+              <stop offset="0.7761" stop-color="#EE322E"/>
+              <stop offset="1" stop-color="#C91D23"/>
+            </linearGradient>
+            <linearGradient id="paint2_linear_8_6" x1="387.742" y1="291.071" x2="446.793" y2="290.078"
+                            gradientUnits="userSpaceOnUse">
+              <stop stop-color="#F8C448"/>
+              <stop offset="0.0738" stop-color="#F8C64B"/>
+              <stop offset="0.1179" stop-color="#F9CD53"/>
+              <stop offset="0.1542" stop-color="#FAD961"/>
+              <stop offset="0.1861" stop-color="#FCEA75"/>
+              <stop offset="0.2151" stop-color="#FFFF8F"/>
+              <stop offset="0.3656" stop-color="#F8C448"/>
+              <stop offset="0.4881" stop-color="#DE9E37"/>
+              <stop offset="0.6476" stop-color="#C07424"/>
+              <stop offset="0.7917" stop-color="#AB5516"/>
+              <stop offset="0.9141" stop-color="#9E430E"/>
+              <stop offset="1" stop-color="#993C0B"/>
+            </linearGradient>
+            <linearGradient id="paint3_linear_8_6" x1="366.147" y1="390.053" x2="436.465" y2="316.78"
+                            gradientUnits="userSpaceOnUse">
+              <stop stop-color="#993C0B"/>
+              <stop offset="0.8495" stop-color="#FFE368"/>
+              <stop offset="1" stop-color="#F8C448"/>
+            </linearGradient>
+            <clipPath id="clip0_8_6">
+              <rect width="349.869" height="175.13" fill="white" transform="translate(224.543 572.021)"/>
+            </clipPath>
+            <clipPath id="clip1_8_6">
+              <rect width="101.97" height="138.799" fill="white"
+                    transform="matrix(0.999863 -0.0165464 0.0168066 0.999859 349.133 266.331)"/>
+            </clipPath>
+            <image id="image0_8_6" [style.transform]="'rotate('+(wheelRotation)+'deg)'" width="800" height="800"
+                   xlink:href="assets/wheel.png" transform="rotate(45)"
+                   transform-origin="400 400" class="wheel-rotation"/>
+            <image id="image1_8_6" width="292" height="296" xlink:href="assets/wheel-center.png"/>
+            <image id="image2_8_6" width="333" height="333" xlink:href="assets/wheel-rim.png"/>
+          </defs>
+        </svg>
+      </div>
+      <svg class="left-crystal" width="440" height="643" viewBox="0 0 440 643" fill="none"
+           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g opacity="0.2" filter="url(#filterLeftCrystal)">
+          <circle cx="18.5" cy="421.5" r="221.5" fill="#27E1F8"/>
         </g>
-        <g opacity="0.2" filter="url(#filter1_f_8_6)">
-          <ellipse cx="407.311" cy="342.487" rx="370.757" ry="342.487" fill="#FDF259"/>
-        </g>
-        <g clip-path="url(#clip0_8_6)">
-          <path
-            d="M555.85 716.959C556.381 692.2 521.392 645.093 507.077 629.394C492.775 613.684 481.635 584.699 480.053 572.021H400.009H398.947H318.913C317.32 584.699 306.192 613.684 291.878 629.394C277.564 645.093 242.574 692.2 243.105 716.959C243.636 741.718 243.105 741.718 243.105 741.718H398.947H400.009H555.85C555.85 741.718 555.319 741.718 555.85 716.959Z"
-            fill="url(#paint0_linear_8_6)"/>
-          <path
-            d="M572.15 715.443C569.899 713.032 566.978 713.33 566.978 713.33H399.489H399.478H231.977C231.977 713.33 229.057 713.032 226.805 715.443C224.22 718.222 224.554 723.448 224.554 723.448V747.15H399.466H399.478H574.389V723.448C574.401 723.448 574.736 718.222 572.15 715.443Z"
-            fill="url(#paint1_linear_8_6)"/>
-        </g>
-        <rect y="35.2332" width="800" height="764.767" fill="url(#pattern0)"/>
-        <g transform="rotate(45)" transform-origin="401 353" class="wheel-rotation">
-          <path
-            d="M475.65 319.383C466.685 299.576 450.474 284.419 430.002 276.705L430.75 274.751C451.743 282.66 468.363 298.203 477.571 318.525L475.65 319.383Z"
-            fill="#FBA629"/>
-          <path
-            d="M479.504 382.333L477.534 381.591C485.303 361.289 484.637 339.197 475.661 319.387L475.63 319.298L476.645 318.948L477.582 318.53C486.79 338.852 487.471 361.515 479.504 382.333Z"
-            fill="#F3F3E9"/>
-          <path
-            d="M435.383 428.802L434.519 426.895C454.484 417.989 469.761 401.904 477.53 381.602L479.5 382.344C471.533 403.163 455.864 419.666 435.383 428.802Z"
-            fill="#39A1E8"/>
-          <path
-            d="M371.068 430.705L371.816 428.75C392.277 436.459 414.541 435.797 434.507 426.891L435.371 428.798C414.901 437.938 392.061 438.614 371.068 430.705Z"
-            fill="#CA3D77"/>
-          <path
-            d="M371.068 430.705C350.075 422.795 333.443 407.248 324.235 386.926L326.157 386.069C335.133 405.879 351.344 421.037 371.805 428.746L371.056 430.701L371.068 430.705Z"
-            fill="#FBA629"/>
-          <path
-            d="M324.26 386.961C315.038 366.608 314.357 343.945 322.329 323.115L324.299 323.857C316.53 344.159 317.196 366.251 326.161 386.057L324.26 386.961Z"
-            fill="#F3F3E9"/>
-          <path
-            d="M324.299 323.857L322.329 323.115C330.3 302.285 345.97 285.783 366.451 276.646L367.315 278.553C347.345 287.471 332.068 303.556 324.299 323.857Z"
-            fill="#39A1E8"/>
-          <path
-            d="M367.31 278.564L366.446 276.658C386.928 267.521 409.768 266.845 430.75 274.751L430.002 276.705C409.541 268.997 387.276 269.658 367.31 278.564Z"
-            fill="#F3F3E9"/>
-        </g>
-        <g clip-path="url(#clip1_8_6)">
-          <path d="M371.42 316.722L400.093 265.488L430.471 315.745L371.42 316.722Z" fill="url(#paint2_linear_8_6)"/>
-          <rect width="83.7405" height="84.2562"
-                transform="matrix(0.999863 -0.0165464 0.0168066 0.999859 359.353 311.309)"
-                fill="url(#pattern1)"/>
-          <path
-            d="M437.036 317.325C427.653 308.32 414.815 302.871 400.737 303.104C386.66 303.337 374.012 309.208 364.949 318.518C355.873 327.829 350.381 340.567 350.616 354.535C350.85 368.503 356.767 381.053 366.139 390.046C375.522 399.051 388.36 404.5 402.425 404.268C416.503 404.035 429.151 398.164 438.226 388.853C447.302 379.542 452.794 366.804 452.559 352.836C452.337 338.88 446.42 326.331 437.036 317.325ZM429.863 380.815C422.87 387.989 413.113 392.525 402.256 392.704C391.398 392.884 381.495 388.674 374.264 381.735C367.033 374.796 362.463 365.116 362.281 354.342C362.1 343.569 366.331 333.743 373.337 326.568C380.33 319.394 390.086 314.858 400.944 314.679C411.802 314.499 421.705 318.697 428.936 325.648C436.166 332.587 440.737 342.267 440.918 353.041C441.099 363.814 436.856 373.64 429.863 380.815Z"
-            fill="url(#paint3_linear_8_6)"/>
-          <rect width="96.0812" height="95.3349"
-                transform="matrix(0.999863 -0.0165464 0.0168066 0.999859 352.811 306.752)"
-                fill="url(#pattern2)"/>
+        <g filter="url(#filterLeftCrystal2)">
+          <rect x="18.5474" y="346" width="143.879" height="251.235" transform="rotate(25.8512 18.5474 346)"
+                fill="url(#patternLeftCrystal)"/>
         </g>
         <defs>
-          <filter id="filter0_f_8_6" x="73.2375" y="680.57" width="657.702" height="156.995"
-                  filterUnits="userSpaceOnUse"
+          <filter id="filterLeftCrystal" x="-403" y="0" width="843" height="843" filterUnits="userSpaceOnUse"
                   color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix"/>
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-            <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_8_6"/>
+            <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_17_2"/>
           </filter>
-          <filter id="filter1_f_8_6" x="-163.447" y="-200" width="1141.51" height="1084.97" filterUnits="userSpaceOnUse"
+          <filter id="filterLeftCrystal2" x="-101" y="336" width="259.028" height="308.83" filterUnits="userSpaceOnUse"
                   color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix"/>
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-            <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_8_6"/>
+            <feGaussianBlur stdDeviation="5" result="effect1_foregroundBlur_17_2"/>
           </filter>
-          <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-            <use xlink:href="#image0_8_6" transform="translate(0.1 0.014) scale(0.001)"/>
+          <pattern id="patternLeftCrystal" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#imageLeftCrystal" transform="translate(-1.98396) scale(0.00534759 0.00306748)"/>
           </pattern>
-          <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
-            <use xlink:href="#image1_8_6" transform="scale(0.00342466)"/>
+          <image xmlns="http://www.w3.org/2000/svg" id="imageLeftCrystal" width="651" height="326"
+                 xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/blue_LeftCrystals.png"/>
+        </defs>
+      </svg>
+      <svg class="right-crystal" width="399" height="643" viewBox="0 0 399 643" fill="none"
+           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g opacity="0.2" filter="url(#filterRightCrystal2)">
+          <circle cx="374.5" cy="374.5" r="174.5" fill="#FE04BB"/>
+        </g>
+        <g filter="url(#filterRightCrystal)">
+          <rect x="220" y="388.348" width="141.829" height="253.892" transform="rotate(-51.7282 220 388.348)"
+                fill="url(#RightCrystal)"/>
+        </g>
+        <defs>
+          <filter id="filterRightCrystal2" x="0" y="0" width="749" height="749" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_19_3"/>
+          </filter>
+          <filter id="filterRightCrystal" x="215" y="272" width="297.174" height="278.606" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur_19_3"/>
+          </filter>
+          <pattern id="RightCrystal" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#imageRightCrystal" transform="translate(-2.07407) scale(0.0123457 0.00689655)"/>
           </pattern>
-          <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
-            <use xlink:href="#image2_8_6" transform="scale(0.003003)"/>
-          </pattern>
-          <linearGradient id="paint0_linear_8_6" x1="399.479" y1="741.716" x2="399.479" y2="572.021"
-                          gradientUnits="userSpaceOnUse">
-            <stop stop-color="#94171F"/>
-            <stop offset="0.022" stop-color="#98171F"/>
-            <stop offset="0.2218" stop-color="#BD1820"/>
-            <stop offset="0.328" stop-color="#CB1820"/>
-            <stop offset="0.4459" stop-color="#BA1820"/>
-            <stop offset="0.6368" stop-color="#A5171F"/>
-            <stop offset="0.8236" stop-color="#98171F"/>
-            <stop offset="1" stop-color="#94171F"/>
-          </linearGradient>
-          <linearGradient id="paint1_linear_8_6" x1="399.48" y1="747.15" x2="399.48" y2="713.32"
-                          gradientUnits="userSpaceOnUse">
-            <stop stop-color="#94171F"/>
-            <stop offset="0.6452" stop-color="#FF3C33"/>
-            <stop offset="0.7761" stop-color="#EE322E"/>
-            <stop offset="1" stop-color="#C91D23"/>
-          </linearGradient>
-          <linearGradient id="paint2_linear_8_6" x1="387.742" y1="291.071" x2="446.793" y2="290.078"
-                          gradientUnits="userSpaceOnUse">
-            <stop stop-color="#F8C448"/>
-            <stop offset="0.0738" stop-color="#F8C64B"/>
-            <stop offset="0.1179" stop-color="#F9CD53"/>
-            <stop offset="0.1542" stop-color="#FAD961"/>
-            <stop offset="0.1861" stop-color="#FCEA75"/>
-            <stop offset="0.2151" stop-color="#FFFF8F"/>
-            <stop offset="0.3656" stop-color="#F8C448"/>
-            <stop offset="0.4881" stop-color="#DE9E37"/>
-            <stop offset="0.6476" stop-color="#C07424"/>
-            <stop offset="0.7917" stop-color="#AB5516"/>
-            <stop offset="0.9141" stop-color="#9E430E"/>
-            <stop offset="1" stop-color="#993C0B"/>
-          </linearGradient>
-          <linearGradient id="paint3_linear_8_6" x1="366.147" y1="390.053" x2="436.465" y2="316.78"
-                          gradientUnits="userSpaceOnUse">
-            <stop stop-color="#993C0B"/>
-            <stop offset="0.8495" stop-color="#FFE368"/>
-            <stop offset="1" stop-color="#F8C448"/>
-          </linearGradient>
-          <clipPath id="clip0_8_6">
-            <rect width="349.869" height="175.13" fill="white" transform="translate(224.543 572.021)"/>
-          </clipPath>
-          <clipPath id="clip1_8_6">
-            <rect width="101.97" height="138.799" fill="white"
-                  transform="matrix(0.999863 -0.0165464 0.0168066 0.999859 349.133 266.331)"/>
-          </clipPath>
-          <image id="image0_8_6" width="800" height="800" xlink:href="assets/wheel.png" transform="rotate(45)"
-                 transform-origin="400 400" class="wheel-rotation"/>
-          <image id="image1_8_6" width="292" height="296" xlink:href="assets/wheel-center.png"/>
-          <image id="image2_8_6" width="333" height="333" xlink:href="assets/wheel-rim.png"/>
+          <image xmlns="http://www.w3.org/2000/svg" id="imageRightCrystal" width="290" height="145"
+                 xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/RightCrystals.png"/>
+        </defs>
+      </svg>
+      <svg class="top-glow" width="504" height="359" viewBox="0 0 504 359" fill="none"
+           xmlns="http://www.w3.org/2000/svg">
+        <g opacity="0.2" filter="url(#filter0_f_3_57)">
+          <circle cx="129.5" cy="-15.5" r="174.5" fill="#FE04BB"/>
+        </g>
+        <defs>
+          <filter id="filter0_f_3_57" x="-245" y="-390" width="749" height="749" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_3_57"/>
+          </filter>
         </defs>
       </svg>
     </div>
-    <svg class="left-crystal" width="440" height="643" viewBox="0 0 440 643" fill="none"
-         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <g opacity="0.2" filter="url(#filterLeftCrystal)">
-        <circle cx="18.5" cy="421.5" r="221.5" fill="#27E1F8"/>
-      </g>
-      <g filter="url(#filterLeftCrystal2)">
-        <rect x="18.5474" y="346" width="143.879" height="251.235" transform="rotate(25.8512 18.5474 346)"
-              fill="url(#patternLeftCrystal)"/>
-      </g>
-      <defs>
-        <filter id="filterLeftCrystal" x="-403" y="0" width="843" height="843" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-          <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_17_2"/>
-        </filter>
-        <filter id="filterLeftCrystal2" x="-101" y="336" width="259.028" height="308.83" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-          <feGaussianBlur stdDeviation="5" result="effect1_foregroundBlur_17_2"/>
-        </filter>
-        <pattern id="patternLeftCrystal" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlink:href="#imageLeftCrystal" transform="translate(-1.98396) scale(0.00534759 0.00306748)"/>
-        </pattern>
-        <image xmlns="http://www.w3.org/2000/svg" id="imageLeftCrystal" width="651" height="326"
-               xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/blue_LeftCrystals.png"/>
-      </defs>
-    </svg>
-    <svg class="right-crystal" width="399" height="643" viewBox="0 0 399 643" fill="none"
-         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <g opacity="0.2" filter="url(#filterRightCrystal2)">
-        <circle cx="374.5" cy="374.5" r="174.5" fill="#FE04BB"/>
-      </g>
-      <g filter="url(#filterRightCrystal)">
-        <rect x="220" y="388.348" width="141.829" height="253.892" transform="rotate(-51.7282 220 388.348)"
-              fill="url(#RightCrystal)"/>
-      </g>
-      <defs>
-        <filter id="filterRightCrystal2" x="0" y="0" width="749" height="749" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-          <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_19_3"/>
-        </filter>
-        <filter id="filterRightCrystal" x="215" y="272" width="297.174" height="278.606" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-          <feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur_19_3"/>
-        </filter>
-        <pattern id="RightCrystal" patternContentUnits="objectBoundingBox" width="1" height="1">
-          <use xlink:href="#imageRightCrystal" transform="translate(-2.07407) scale(0.0123457 0.00689655)"/>
-        </pattern>
-        <image xmlns="http://www.w3.org/2000/svg" id="imageRightCrystal" width="290" height="145"
-               xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/RightCrystals.png"/>
-      </defs>
-    </svg>
-    <svg class="top-glow" width="504" height="359" viewBox="0 0 504 359" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g opacity="0.2" filter="url(#filter0_f_3_57)">
-        <circle cx="129.5" cy="-15.5" r="174.5" fill="#FE04BB"/>
-      </g>
-      <defs>
-        <filter id="filter0_f_3_57" x="-245" y="-390" width="749" height="749" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-          <feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_3_57"/>
-        </filter>
-      </defs>
-    </svg>
+    <div class="button-wrapper">
+      <button *ngIf="!rolled" [disabled]="rolling" class="roll-button" (click)="roll()">Испытать удачу</button>
+      <span *ngIf="rolled" class="roll-result">{{rollResultText}}</span>
+      <span *ngIf="rolled">ВАШ ВЫИГРЫШ</span>
+    </div>
   </div>
-  <div class="button-wrapper">
-    <button *ngIf="!rolled" [disabled]="rolling" class="roll-button" (click)="roll()">Испытать удачу</button>
-    <span *ngIf="rolled" class="roll-result">{{rollResultText}}</span>
-    <span *ngIf="rolled">ВАШ ВЫИГРЫШ</span>
-  </div>
-</div>
 </div>

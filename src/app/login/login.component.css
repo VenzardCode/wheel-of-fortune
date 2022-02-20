@@ -61,7 +61,8 @@
   margin-top: -310px;
   display: block;
 }
-.mat-icon{
+
+.mat-icon {
   overflow: hidden;
 }
 
@@ -102,19 +103,21 @@
   position: absolute;
   bottom: 0;
 }
-.logo{
+
+.logo {
   max-width: 100vw;
   z-index: 3;
 
 }
-.login-form{
+
+.login-form {
   max-width: 75vw;
 }
 
 @media (max-height: 650px) {
 
 
-  .wheel-logo{
+  .wheel-logo {
     display: none;
   }
 }

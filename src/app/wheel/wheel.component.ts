@@ -9,8 +9,6 @@ import {AuthService} from "../auth/auth.service";
 })
 export class WheelComponent implements OnInit {
 
-  public innerWheel?: SVGGElement = undefined;
-  public wheel?: SVGImageElement = undefined;
   public rolled: boolean = this.authService.rolled !== -1;
   public width: number = 600;
   public height: number = 630;
@@ -20,6 +18,7 @@ export class WheelComponent implements OnInit {
   public idToLandOn: number = 0;
   public rollResultText: string = '';
   public rolling: boolean = false;
+  public wheelRotation: number = 0;
 
   public items = [
     {text: '3 КРИСТАЛА'},
@@ -36,20 +35,16 @@ export class WheelComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.wheel = document.querySelector('image.wheel-rotation') as SVGImageElement;
-    this.innerWheel = document.querySelector('g.wheel-rotation') as SVGGElement;
     if (this.rolled) {
       this.rollResultText = this.items[this.authService.rolled].text;
       let angle: number = (this.authService.rolled * 45) + 22.5;
       this.setRotationAngle(angle);
     }
-
-
   }
 
   public roll(): void {
     if (!this.rolling) {
-      this.rolling=true;
+      this.rolling = true;
       this.httpService.rollRequest().subscribe(res => {
         this.idToLandOn = res.rolled;
         localStorage.setItem('rolled', res.rolled.toString());
@@ -85,9 +80,7 @@ export class WheelComponent implements OnInit {
 
   private setRotationAngle(value: number): void {
     value = 45 - value;
-    this.wheel?.setAttribute('style', `transform:rotate(${value}deg)`);
-    this.innerWheel?.setAttribute('style', `transform:rotate(${-value}deg)`);
-
+    this.wheelRotation = value;
   }
 
   public logout(): void {
