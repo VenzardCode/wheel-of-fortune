@@ -1,7 +1,8 @@
-.wrapper {
+.body-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 .top-bar{
   display: flex;
@@ -52,7 +53,7 @@
 .wheel{
 
   width: calc(100% + 440px);
-  margin: -245px -220px -175px;
+  margin: -170px -220px -175px;
 }
 .wheel-wrapper{
   max-width: 100vw;
@@ -93,7 +94,7 @@
   vertical-align: baseline;
 }
 
-:host {
+.wrapper {
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpService} from "../auth/http/http.service";
-import {MatSnackBar} from "@angular/material/snack-bar";
 import {AuthService} from "../auth/auth.service";
 
 @Component({
@@ -12,7 +11,6 @@ export class WheelComponent implements OnInit {
 
   public innerWheel?: SVGGElement = undefined;
   public wheel?: SVGImageElement = undefined;
-
   public rolled: boolean = this.authService.rolled !== -1;
   public width: number = 600;
   public height: number = 630;
@@ -34,7 +32,7 @@ export class WheelComponent implements OnInit {
     {text: '35 КРИСТАЛОВ'}
   ]
 
-  constructor(public httpService: HttpService, private _snackBar: MatSnackBar, private authService: AuthService) {
+  constructor(public httpService: HttpService, private authService: AuthService) {
   }
 
   public ngOnInit(): void {
@@ -42,8 +40,8 @@ export class WheelComponent implements OnInit {
     this.innerWheel = document.querySelector('g.wheel-rotation') as SVGGElement;
     if (this.rolled) {
       this.rollResultText = this.items[this.authService.rolled].text;
-      let test: number = (this.authService.rolled * 45) + 22.5;
-      this.setRotationAngle(test);
+      let angle: number = (this.authService.rolled * 45) + 22.5;
+      this.setRotationAngle(angle);
     }
 
 
@@ -56,8 +54,8 @@ export class WheelComponent implements OnInit {
         this.idToLandOn = res.rolled;
         localStorage.setItem('rolled', res.rolled.toString());
         let rand: number = (Math.random() * 35) + 5;
-        let test: number = (this.idToLandOn * 45) + rand;
-        this.startRotation(test).then(() => {
+        let angle: number = (this.idToLandOn * 45) + rand;
+        this.startRotation(angle).then(() => {
           this.rolled = true;
           this.rollResultText = this.items[this.idToLandOn].text;
         });
