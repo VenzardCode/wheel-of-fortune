@@ -114,6 +114,15 @@
   max-width: 75vw;
 }
 
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #FEC550 !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #FEC550 !important;
+}
+
+
 @media (max-height: 650px) {
 
 
