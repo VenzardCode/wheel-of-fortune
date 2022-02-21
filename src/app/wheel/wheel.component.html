@@ -30,7 +30,7 @@
               fill="url(#paint1_linear_8_6)"/>
           </g>
           <rect y="35.2332" width="800" height="764.767" fill="url(#pattern0)"/>
-          <g transform="rotate(45)" [style.transform]="'rotate('+(-wheelRotation)+'deg)'" transform-origin="401 353"
+          <g transform="rotate(45)" [style.transform]="'rotate('+(-wheelRotation)+'deg)'" [style.transition]="'transform ' + wheelTransition + 's cubic-bezier(.07,.6,.26,1)'" transform-origin="401 353"
              class="wheel-rotation">
             <path
               d="M475.65 319.383C466.685 299.576 450.474 284.419 430.002 276.705L430.75 274.751C451.743 282.66 468.363 298.203 477.571 318.525L475.65 319.383Z"
@@ -139,8 +139,9 @@
               <rect width="101.97" height="138.799" fill="white"
                     transform="matrix(0.999863 -0.0165464 0.0168066 0.999859 349.133 266.331)"/>
             </clipPath>
-            <image id="image0_8_6" [style.transform]="'rotate('+(wheelRotation)+'deg)'" width="800" height="800"
-                   xlink:href="assets/wheel.png" transform="rotate(45)"
+            <image id="image0_8_6" width="800" height="800" xlink:href="assets/wheel.png" transform="rotate(45)" 
+                   (transitionend) = "animationDone()" [style.transform]="'rotate('+(wheelRotation)+'deg)'"
+                   [style.transition]="'transform ' + wheelTransition + 's cubic-bezier(.07,.6,.26,1)'"
                    transform-origin="400 400" class="wheel-rotation"/>
             <image id="image1_8_6" width="292" height="296" xlink:href="assets/wheel-center.png"/>
             <image id="image2_8_6" width="333" height="333" xlink:href="assets/wheel-rim.png"/>

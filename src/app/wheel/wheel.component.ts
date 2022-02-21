@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpService} from "../auth/http/http.service";
-import {AuthService} from "../auth/auth.service";
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from "../auth/http/http.service";
+import { AuthService } from "../auth/auth.service";
 
 @Component({
   selector: 'app-wheel',
@@ -19,16 +19,18 @@ export class WheelComponent implements OnInit {
   public rollResultText: string = '';
   public rolling: boolean = false;
   public wheelRotation: number = 0;
+  public wheelTransition: number = 0;
+  public animationDone: () => void = () => void (0);
 
   public items = [
-    {text: '3 КРИСТАЛА'},
-    {text: '5 КРИСТАЛОВ'},
-    {text: '7 КРИСТАЛОВ'},
-    {text: '10 КРИСТАЛОВ'},
-    {text: '14 КРИСТАЛОВ'},
-    {text: '17 КРИСТАЛОВ'},
-    {text: '25 КРИСТАЛОВ'},
-    {text: '35 КРИСТАЛОВ'}
+    { text: '3 КРИСТАЛА' },
+    { text: '5 КРИСТАЛОВ' },
+    { text: '7 КРИСТАЛОВ' },
+    { text: '10 КРИСТАЛОВ' },
+    { text: '14 КРИСТАЛОВ' },
+    { text: '17 КРИСТАЛОВ' },
+    { text: '25 КРИСТАЛОВ' },
+    { text: '35 КРИСТАЛОВ' }
   ]
 
   constructor(public httpService: HttpService, private authService: AuthService) {
@@ -48,34 +50,22 @@ export class WheelComponent implements OnInit {
       this.httpService.rollRequest().subscribe(res => {
         this.idToLandOn = res.rolled;
         localStorage.setItem('rolled', res.rolled.toString());
-        let rand: number = (Math.random() * 35) + 5;
-        let angle: number = (this.idToLandOn * 45) + rand;
-        this.startRotation(angle).then(() => {
+        let rotations = 27 + Math.round(Math.random() * 6);
+        let angleOffset: number = (Math.random() * 35) + 5;
+        let angle: number = (rotations * 360) + (this.idToLandOn * 45) + angleOffset;
+        let duration: number = 10 + (Math.random() * 3);
+        this.animationDone = () => {
+          this.animationDone = () => void (0);
+          this.wheelTransition = 0;
+          this.setRotationAngle(angle - Math.floor(angle / 360) * 360);
           this.rolled = true;
           this.rollResultText = this.items[this.idToLandOn].text;
-        });
+        }
+        this.wheelTransition = duration;
+        this.setRotationAngle(angle);
       }, error => {
       })
     }
-  }
-
-  private async startRotation(endAngle: number): Promise<void> {
-    await new Promise<void>((resolve) => {
-      let rotation = endAngle + 90;
-      if (rotation > 360) rotation -= 360;
-      let i = 0;
-      let int = setInterval(() => {
-        let rspeed = 5440 / (30 + i++) - 10;
-        if (rspeed < 0) {
-          clearInterval(int);
-          resolve();
-        } else {
-          rotation += rspeed;
-          if (rotation > 360) rotation -= 360;
-          this.setRotationAngle(rotation);
-        }
-      }, 20);
-    });
   }
 
   private setRotationAngle(value: number): void {
